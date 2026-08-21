@@ -8,5 +8,6 @@ The purpose of this repository is to **capture ideas before they are forgotten**
 
 ## Ideas
 
-* [Neural Network Tools](ideas/nn.md)
-* ...
+- [Neural Network Tools](ideas/nn/nn.md)
+- [Libraries](ideas/library/library.md)
+- ...

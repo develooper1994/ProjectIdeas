@@ -1589,7 +1589,7 @@ A complete suite can provide a unified experience on top of these tools.
 
 ### Level 1 — Small / Immediately Useful
 
-#### Model Inspector
+#### [Model Inspector](./ModelInspector.md)
 
 Inspect:
 
