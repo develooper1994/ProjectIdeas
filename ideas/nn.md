@@ -1,38 +1,106 @@
-# Visual ML & Intelligent System Tooling Platform
+# Intelligent System Tooling Platform
 
 ## 1. Idea
 
-Create a modular ecosystem of developer and research tools that makes data-driven solution development dramatically easier.
+Build a modular ecosystem of developer and research tools that makes the development of data-driven and AI-based solutions dramatically easier.
 
-The platform should not attempt to reinvent neural networks, machine learning, datasets, compilers, inference engines, cloud infrastructure, or deployment runtimes.
+The platform should not attempt to reinvent neural networks, machine learning frameworks, datasets, inference engines, compilers, cloud infrastructure, labeling systems, or deployment runtimes.
 
-Its role is to **bring existing technologies together, provide a common workflow, hide unnecessary complexity, and make the entire process easier to use**.
+Its role is to:
+
+* connect existing technologies
+* provide common abstractions
+* simplify workflows
+* automate repetitive work
+* hide unnecessary infrastructure complexity
+* provide visualization and orchestration
+* make experiments reproducible
+* provide system-aware recommendations
+* make advanced AI/ML engineering accessible through low-code/no-code interfaces
+* remain fully extensible for researchers and developers
 
 The central philosophy is:
 
-> **Do not reinvent the pipeline. Connect it, simplify it, automate it, and make it accessible.**
+> **Do not reinvent the ecosystem. Connect it, simplify it, automate it, and make it easier to use.**
 
-The platform should support neural networks, classical machine learning, signal processing, computer vision, rule-based systems, optimization, and other computational approaches.
+The project should support:
 
-It should work for both:
-
-* users who want to build solutions visually with little or no code
-* researchers and developers who need complete control and custom functionality
+* classical algorithms
+* classical machine learning
+* neural networks
+* foundation models
+* generative AI
+* RAG systems
+* agent workflows
+* computer vision
+* signal processing
+* rule-based systems
+* optimization
+* data pipelines
+* deployment and edge inference
 
 ---
 
-# 2. Core Philosophy
+# 2. Vision
 
-## 2.1 LCNC without becoming restrictive
+The long-term vision is a unified environment in which a developer or researcher can move from:
 
-Common workflows should require little or no code.
+```text
+Problem
+  ↓
+Data
+  ↓
+Curation / Labeling
+  ↓
+Pipeline
+  ↓
+Model / Algorithm / Agent
+  ↓
+Experiment
+  ↓
+Evaluation
+  ↓
+Optimization
+  ↓
+Export
+  ↓
+Deployment
+  ↓
+Monitoring
+  ↓
+Improvement
+```
 
-Users should be able to:
+without being forced to manually manage every underlying tool.
+
+The platform should be capable of serving both:
+
+```text
+Low-Code / No-Code User
+            ↕
+       Same Ecosystem
+            ↕
+Researcher / Developer
+```
+
+The first user should be protected from unnecessary complexity.
+
+The second user should never be prevented from introducing something new.
+
+---
+
+# 3. Core Philosophy
+
+## 3.1 LCNC without becoming restrictive
+
+Common operations should require little or no code.
+
+A user should be able to:
 
 * select data
 * prepare datasets
 * construct pipelines
-* select models or algorithms
+* select models
 * configure experiments
 * run experiments
 * compare results
@@ -40,39 +108,257 @@ Users should be able to:
 * export
 * deploy
 
-through visual interfaces or simple commands.
+through graphical interfaces or simple commands.
 
 However:
 
-> **Low-code/no-code must reduce complexity, not remove capability.**
+> **Low-code/no-code should reduce complexity, not remove capability.**
 
-Advanced users must be able to introduce custom components and code.
+Every important abstraction should eventually have an escape hatch for advanced users.
 
 ---
 
-## 2.2 Neural networks are only one possible solution
+## 3.2 The project is an ecosystem, not one giant application
 
-The platform should not be designed around the assumption that every problem needs an NN.
+The system should be composed of independent tools.
 
-Possible components include:
+A user should not need to install the entire ecosystem just to perform one operation.
 
-### Neural Networks
+For example:
 
-* CNN
-* RNN
-* Transformer
-* MLP
-* custom architectures
-* custom layers
-* custom losses
-* custom optimizers
-* custom training procedures
+```text
+User A
+├── Model Transformer
+├── Quantization
+└── Benchmark
 
-### Classical ML
+User B
+├── Dataset
+├── Labeling
+├── Experiment Runner
+└── Monitoring
+
+User C
+├── Full Suite
+└── Everything
+```
+
+The complete desktop suite is optional.
+
+This modularity is a first-class architectural requirement.
+
+---
+
+# 4. The Role of the Project
+
+The platform should **connect existing technologies rather than replace them**.
+
+Potential integrations include:
+
+```text
+PyTorch
+scikit-learn
+XGBoost
+OpenCV
+ONNX
+ONNX Runtime
+ncnn
+MNN
+TensorRT
+OpenVINO
+TFLite
+TVM
+IREE
+MLIR
+llama.cpp
+Ollama
+CVAT
+Label Studio
+FiftyOne
+Vector Databases
+Container Runtimes
+Cloud Workers
+...
+```
+
+The platform should provide:
+
+* adapters
+* orchestration
+* visualization
+* common metadata
+* experiment management
+* artifact management
+* automation
+* recommendation
+* reproducibility
+* consistent CLI interfaces
+* plugin support
+
+It should only implement functionality itself when doing so provides a meaningful advantage.
+
+---
+
+# 5. Main System Layers
+
+A conceptual architecture:
+
+```text
+                         PLATFORM
+                            │
+        ┌───────────────────┼─────────────────────┐
+        │                   │                     │
+       DATA               MODELS                LOGIC
+        │                   │                     │
+   Dataset              NN / ML              Rules
+   Labeling              LLM                 Algorithms
+   Curation              VLM                 DSP
+   Governance            Diffusion            Optimization
+        │                   │                     │
+        └───────────────────┼─────────────────────┘
+                            │
+                        COMPONENTS
+                            │
+                         PIPELINES
+             ┌──────────────┼───────────────┐
+             │              │               │
+        ML Pipeline     GenAI Pipeline   Agent Pipeline
+             │              │               │
+             └──────────────┼───────────────┘
+                            │
+                        EXPERIMENT
+                            │
+                ┌───────────┼────────────┐
+                │           │            │
+             Evaluate   Optimize      Benchmark
+                │           │            │
+                └───────────┼────────────┘
+                            │
+                        DEPLOYMENT
+                            │
+      ┌───────────┬─────────┼─────────┬───────────┐
+      │           │         │         │           │
+    Desktop     Server    Mobile   Embedded    Browser
+      │           │         │         │           │
+      └───────────┴─────────┼─────────┴───────────┘
+                            │
+                         OBSERVE
+                            │
+                    Drift / Monitoring
+                            │
+                     Continuous Loop
+```
+
+The architecture should remain flexible enough that the exact boundaries can evolve after implementation experience.
+
+---
+
+# 6. Component as the Fundamental Abstraction
+
+The central abstraction should not be "Neural Network".
+
+It should be a generic `Component`.
+
+Examples:
+
+```text
+Conv2D
+Linear
+RandomForest
+Resize
+GaussianBlur
+FFT
+KalmanFilter
+Rule
+LLM
+Retriever
+VectorSearch
+Tokenizer
+Embedding
+CustomLayer
+CustomOptimizer
+CustomAlgorithm
+```
+
+A component may provide:
+
+```text
+Inputs
+Outputs
+Parameters
+Capabilities
+Implementation
+Runtime Requirements
+Metadata
+Version
+```
+
+This allows NN and non-NN operations to coexist.
+
+---
+
+# 7. Solution, Pipeline, Model, and Component
+
+These concepts should remain separate.
+
+## Component
+
+A reusable computational building block.
+
+```text
+Conv2D
+RandomForest
+Retriever
+Rule
+```
+
+## Pipeline
+
+A technical flow of components.
+
+```text
+Input
+ ↓
+Preprocess
+ ↓
+Model
+ ↓
+Postprocess
+ ↓
+Output
+```
+
+## Model
+
+A learned or algorithmic model used inside a pipeline.
+
+```text
+Neural Network
+Random Forest
+LLM
+Diffusion Model
+...
+```
+
+## Solution
+
+A higher-level system composed of data, pipelines, models, runtimes, resources, evaluation rules, and deployment configuration.
+
+This distinction becomes particularly important for GenAI and agent systems.
+
+---
+
+# 8. Non-Neural Solutions
+
+The system must not assume that neural networks are always the correct solution.
+
+Possible approaches:
+
+### Classical Machine Learning
 
 * Linear Regression
 * Logistic Regression
-* Decision Trees
+* Decision Tree
 * Random Forest
 * SVM
 * k-NN
@@ -83,7 +369,7 @@ Possible components include:
 * clustering
 * dimensionality reduction
 
-### Non-ML Approaches
+### Algorithmic / Non-ML
 
 * rule-based systems
 * finite state machines
@@ -96,7 +382,7 @@ Possible components include:
 * optimization
 * heuristics
 
-A solution can combine them.
+A single pipeline should be able to combine them.
 
 Example:
 
@@ -116,12 +402,61 @@ Rule Engine
 Decision
 ```
 
-or:
+---
+
+# 9. Neural Network Tooling
+
+## NN Visualizer
+
+Visualize existing network structures.
+
+Possible functionality:
+
+* graph visualization
+* operator inspection
+* tensor shapes
+* inputs / outputs
+* parameters
+* metadata
+* graph relationships
+
+Reference:
+
+* [Netron](https://netron.app/)
+
+---
+
+## NN Editor
+
+Visually create or modify neural network graphs.
+
+Possible functionality:
+
+* add nodes
+* remove nodes
+* connect nodes
+* replace operators
+* change parameters
+* validate graph
+* import
+* export
+
+---
+
+## General Visual Pipeline Editor
+
+Eventually move beyond NN graphs.
+
+Example:
 
 ```text
 Input
   ↓
-Neural Network
+Decode
+  ↓
+Resize
+  ↓
+CNN
   ↓
 Tracker
   ↓
@@ -129,1095 +464,154 @@ Kalman Filter
   ↓
 Rule Engine
   ↓
-Decision
+Output
 ```
+
+The editor should operate on generic components rather than neural-network-specific objects.
 
 ---
 
-# 3. The Role of the Project
+# 10. Foundation Models and Generative AI
 
-The project is fundamentally a **connector, coordinator, and simplifier**.
+Modern AI tooling must include more than traditional ML.
 
-It should connect existing tools rather than replace them.
-
-Examples:
+The platform should support a broader family of foundation models:
 
 ```text
-PyTorch
-ONNX
-scikit-learn
-XGBoost
-OpenCV
-ncnn
-MNN
-ONNX Runtime
-TVM
-IREE
-MLIR
-CVAT
-Label Studio
-FiftyOne
-...
+Foundation Models
+├── LLM
+├── Vision Models
+├── Vision-Language Models
+├── Multimodal Models
+├── Embedding Models
+├── Diffusion Models
+└── Other Foundation Models
 ```
 
-The project should provide:
-
-* common abstractions
-* adapters
-* orchestration
-* experiment management
-* visualization
-* automation
-* recommendations
-* reproducibility
-* easier configuration
-* simpler user interfaces
-* consistent CLI interfaces
-
-It should not attempt to rebuild every underlying technology.
+The platform should treat these as components that can participate in pipelines rather than assuming they are isolated models.
 
 ---
 
-# 4. Modular Architecture
+# 11. LLM Tooling
 
-Independent tools are a fundamental requirement.
+Potential functionality:
 
-A user should **never need to install the entire ecosystem** just to use one capability.
-
-The installation experience should resemble the modularity of large developer environments:
-
-```text
-Install only what you need.
-Add components later.
-Remove components you do not need.
-```
-
-For example:
-
-```text
-User A
-├── Model Visualizer
-├── Quantization
-└── Model Transformer
-
-User B
-├── Dataset
-├── Labeling
-├── Experiment Runner
-└── Benchmark
-
-User C
-├── Everything
-└── Desktop Suite
-```
-
-A full suite is optional.
-
----
-
-# 5. Independent Tools
-
-Each major capability should ideally be usable as:
-
-```text
-CLI
-Library / SDK
-Plugin
-Desktop UI adapter
-```
-
-A tool should not fundamentally depend on the desktop application.
-
-Example:
-
-```text
-quantize
-    ↓
-CLI
-Library
-GUI
-Plugin
-```
-
-All of them should use the same underlying implementation.
-
----
-
-# 6. Possible Independent Tools
-
-The following tools can become separate components.
-
-## Data
-
-```text
-dataset
-dataset-inspect
-dataset-curate
-dataset-split
-dataset-validate
-```
-
-## Labeling
-
-```text
-label
-auto-label
-annotation-review
-```
-
-## Model
-
-```text
-model-visualizer
-model-editor
-model-transformer
-model-analyzer
-model-benchmark
-```
-
-## Optimization
-
-```text
-quantize
-optimize
-benchmark
-```
-
-## Experimentation
-
-```text
-experiment
-sweep
-automl
-```
-
-## Deployment
-
-```text
-export
-deploy
-package
-```
-
-## Infrastructure
-
-```text
-worker
-runtime
-device
-```
-
-These names are placeholders and can be refined later.
-
----
-
-# 7. Standalone Development Strategy
-
-The project should allow independent components to be developed whenever time is available.
-
-This is important because the project is intentionally too large to build all at once.
-
-A component should be useful independently even if the complete suite does not yet exist.
-
-For example:
-
-```text
-Quantization Tool
-        ↓
-Useful standalone product
-        ↓
-Later integrated into Suite
-```
-
-This makes development incremental instead of requiring completion of the entire platform before anything becomes useful.
-
----
-
-# 8. Suggested Independent Tools by Difficulty
-
-The exact order can change after technical investigation, but a practical progression is:
-
-## Level 1 — Small / Immediately Useful
-
-### Model Transformer
-
-Convert models between supported formats or representations.
-
-Example:
-
-```bash
-model-transformer input.onnx --target ncnn
-```
-
-The first implementation should support only a small number of useful conversions.
-
-The architecture should allow additional backends later.
-
-### Model Inspector
-
-Inspect:
-
-* operators
-* shapes
-* parameters
-* inputs
-* outputs
-* metadata
-* unsupported operations
-
-This can share infrastructure with the transformer.
-
-### Model Benchmark
-
-Run a model against a selected runtime/device and report:
-
-* latency
-* throughput
-* memory
-* model size
-* device information
-
-### Dataset Utilities
-
-Simple CLI utilities for:
-
-* inspect
-* validate
-* split
-* statistics
-* duplicate detection
-
-These tools can become useful without the complete platform.
-
----
-
-## Level 2 — Medium
-
-### Quantization Tool
-
-A major standalone component.
-
-Possible workflow:
-
-```text
-Model
- ↓
-Analyze
- ↓
-Calibration
- ↓
-Quantize
- ↓
-Validate
- ↓
-Benchmark
- ↓
-Compare
-```
-
-Potential features:
-
-* FP32 → FP16
-* FP32 → INT8
-* lower precision formats where supported
-* static quantization
-* dynamic quantization
-* calibration
-* mixed precision
-* sensitivity analysis
-* accuracy comparison
-* performance comparison
-* backend-specific export
-
-The tool should not assume one runtime.
-
-Conceptually:
-
-```text
-Quantization Engine
-       ↓
-Backend Adapter
- ┌─────┼─────────┐
-ONNX  MNN       ncnn
-```
-
----
-
-### Dataset Curator
-
-Automate:
-
-* duplicate detection
-* invalid sample detection
-* outlier detection
-* class imbalance analysis
-* sample statistics
-* filtering
-* dataset splitting
-* sample selection
-
-The purpose is to reduce wasted training data and improve dataset quality.
-
----
-
-### Labeling Automation
-
-Instead of implementing every labeling feature manually, integrate existing tools and automate repetitive work.
-
-Possible workflow:
-
-```text
-Raw Data
-   ↓
-Model / Detector
-   ↓
-Auto Label
-   ↓
-Human Review
-   ↓
-Correction
-   ↓
-Dataset Version
-```
-
-Possible automation:
-
-* pre-labeling
-* object detection proposals
-* segmentation proposals
-* face detection
-* classification suggestions
-* tracking-assisted annotation
-* duplicate sample filtering
-* uncertainty-based sample selection
-
-The platform should eventually help answer:
-
-> Which samples should a human label next?
-
-This can lead to active-learning workflows.
-
----
-
-## Level 3 — Large
-
-### Experiment Runner
-
-Handle:
-
-* dataset
-* pipeline
-* model
-* parameters
-* runtime
-* device
-* execution
-* metrics
-* artifacts
-
-with one reproducible experiment definition.
-
-### Experiment Comparator
-
-Compare multiple runs according to:
-
-* accuracy
-* latency
-* memory
-* model size
-* throughput
-* energy
-* other domain-specific metrics
-
-### Automated Optimization
-
-Search automatically over:
-
-* model parameters
-* training parameters
-* augmentation
-* architecture
-* precision
-* backend
-* runtime
-* hardware
-
----
-
-## Level 4 — Very Large
-
-### Visual Pipeline Builder
-
-Graphically construct:
-
-```text
-Data
- ↓
-Preprocess
- ↓
-Model
- ↓
-Postprocess
- ↓
-Evaluation
-```
-
-with arbitrary combinations of components.
-
-### NN Editor
-
-Visually create and modify neural network graphs.
-
-### General Solution Editor
-
-Go beyond NN graphs and allow classical ML, algorithms, rules, filters, and custom components in the same visual environment.
-
-### Deployment System
-
-Integrate:
-
-* optimization
+* model conversion
 * quantization
-* export
-* compilation
-* packaging
-* target configuration
-* deployment
+* inference
+* benchmarking
+* local execution
+* prompt testing
+* structured outputs
+* tool calling
+* context management
+* KV-cache-aware benchmarking
+* model packaging
+* runtime selection
+
+Relevant local/runtime ecosystems may include:
+
+* llama.cpp
+* Ollama
+* other local inference runtimes
+
+`llama.cpp` currently centers local model execution around GGUF models and provides its own conversion and quantization workflows, making GGUF a relevant backend-specific format for the platform rather than a universal internal representation.
 
 ---
 
-# 9. Quantization as a First-Class Capability
+# 12. RAG Pipelines
 
-Quantization should receive unusually high priority.
+RAG should be considered a separate pipeline type.
 
-The project should not treat it as a simple:
-
-```text
-FP32 → INT8
-```
-
-conversion.
-
-A better workflow is:
+Example:
 
 ```text
-              Quantization
-                   │
-        ┌──────────┼──────────┐
-        ↓          ↓          ↓
-      Analyze   Calibrate   Strategy
-        │          │          │
-        └──────────┼──────────┘
-                   ↓
-               Quantize
-                   ↓
-               Evaluate
-                   ↓
-               Benchmark
-                   ↓
-             Compare / Select
+Documents
+  ↓
+Parse
+  ↓
+Chunk
+  ↓
+Embed
+  ↓
+Vector Store
+  ↓
+Retriever
+  ↓
+LLM
+  ↓
+Answer
 ```
 
-Quantization may become part of the automated optimization loop.
+Possible integrations:
+
+* vector databases
+* embedding models
+* document parsers
+* retrieval systems
+* rerankers
+* local LLM runtimes
+
+The platform should orchestrate these components instead of reinventing every underlying technology.
 
 ---
 
-# 10. Quantization + AutoML
+# 13. Agent Pipelines
 
-Quantization should eventually be considered one of the optimization dimensions.
+Agent-based systems should also be represented as pipelines.
 
-For example:
-
-```text
-Experiment
-    ↓
-Search
- ┌──┼───────────────┐
- ↓  ↓               ↓
-FP32 FP16          INT8
- ↓  ↓               ↓
-Eval Eval           Eval
- └──┼───────────────┘
-    ↓
-Pareto Results
-```
-
-The system could automatically determine that:
+Example:
 
 ```text
-INT8:
-- accuracy acceptable
-- memory much lower
-- latency much lower
-```
-
-and recommend it over FP32.
-
-Quantization therefore becomes part of **solution optimization**, not merely model conversion.
-
----
-
-# 11. Intelligent Recommendations
-
-The platform should eventually understand the user's environment and provide useful recommendations.
-
-It should not merely execute commands.
-
-It should be able to say things such as:
-
-```text
-Available memory is low.
-Consider reducing batch size from 64 to 16.
-```
-
-or:
-
-```text
-This experiment is unlikely to fit into available GPU memory.
-Estimated requirement: 18 GB.
-Available: 12 GB.
-```
-
-or:
-
-```text
-This model has unsupported operations for the selected deployment backend.
-```
-
-or:
-
-```text
-INT8 quantization is likely to provide a significant memory reduction.
-```
-
-or:
-
-```text
-The selected device is significantly slower for this workload.
-Consider another worker.
-```
-
-or:
-
-```text
-This dataset is highly imbalanced.
-Consider resampling or class weighting.
-```
-
-or:
-
-```text
-Your calibration dataset may not represent the deployment distribution.
-```
-
-The system should distinguish:
-
-```text
-Fact
-Recommendation
-Warning
-Prediction
-```
-
-so that users know how confident the system is.
-
----
-
-# 12. System-Aware Experiment Assistant
-
-Eventually the platform could inspect:
-
-* CPU
-* GPU
-* accelerator
-* RAM
-* VRAM
-* storage
-* operating system
-* installed runtimes
-* supported backends
-
-and combine that information with the requested experiment.
-
-Conceptually:
-
-```text
-Experiment
-    +
-Machine Profile
-    ↓
-Feasibility Analysis
-    ↓
-Recommended Configuration
-```
-
-Possible output:
-
-```text
-Recommended:
-Batch Size: 16
-Precision: INT8
-Backend: CUDA
-Worker: workstation-02
-
-Reason:
-Current machine has insufficient memory for the default configuration.
-```
-
-This could become one of the platform's most valuable differentiators.
-
----
-
-# 13. Execution Model
-
-The platform should separate:
-
-```text
-Experiment
-    ↓
-Execution Request
-    ↓
-Executor
-```
-
-An executor could be:
-
-```text
-LocalExecutor
-RemoteExecutor
-ContainerExecutor
-PythonExecutor
-NativeExecutor
-```
-
-This allows experiments to run on:
-
-* the user's workstation
-* another machine on the local network
-* a dedicated server
-* a cloud machine
-* an embedded device
-
-without changing the experiment definition.
-
----
-
-# 14. Local Network Workers
-
-The cloud should not be considered mandatory.
-
-A research group may have:
-
-```text
-Researcher PC
-      │
-      ├── Local GPU workstation
-      ├── CPU server
-      ├── NAS
-      └── Embedded devices
-```
-
-The platform should eventually allow these machines to act as workers.
-
-Conceptually:
-
-```text
-                  Experiment
-                      │
-                 Scheduler
-                      │
-        ┌─────────────┼─────────────┐
-        ↓             ↓             ↓
-    Worker A      Worker B      Worker C
-      CPU           GPU         Embedded
-```
-
-The same architecture can later extend to cloud workers.
-
----
-
-# 15. GPU Support
-
-GPU support should be treated as a core requirement rather than an optional later feature.
-
-The architecture should separate:
-
-```text
-Device
+User
  ↓
-Compute Backend
+Planner / LLM
  ↓
-Runtime
+Tool Selection
+ ↓
+Tool
+ ↓
+Observation
+ ↓
+LLM
+ ↓
+Decision
+ ↓
+Result
 ```
 
-Possible devices:
+Potential components:
 
-* CPU
-* NVIDIA GPU
-* other GPUs
-* NPU / accelerator
-* remote GPU
+* LLM
+* tool
+* retriever
+* memory
+* planner
+* evaluator
+* guardrail
+* router
 
-Possible backends may include:
-
-* CUDA
-* Vulkan
-* Metal
-* OpenCL
-* backend-specific accelerators
-
-The first implementation should prioritize actual use cases rather than attempting to support every GPU technology immediately.
+This should use the same generic component model wherever possible.
 
 ---
 
-# 16. Deployment Ecosystem
-
-Deployment should support multiple runtimes rather than locking the project to one framework.
-
-Important candidates include:
-
-```text
-ONNX Runtime
-ncnn
-MNN
-TensorRT
-OpenVINO
-TFLite
-TVM
-IREE
-MLIR
-```
-
-They should be treated according to their role.
-
-For example:
-
-```text
-Interchange
-    ↓
-ONNX
-
-Inference Runtime
-    ↓
-ONNX Runtime
-ncnn
-MNN
-TensorRT
-OpenVINO
-...
-
-Compiler / Optimization Ecosystem
-    ↓
-MLIR
-IREE
-TVM
-...
-```
-
-Deployment should ultimately be:
-
-```text
-Model / Solution
-       ↓
-Optimize
-       ↓
-Quantize
-       ↓
-Convert
-       ↓
-Compile
-       ↓
-Package
-       ↓
-Deploy
-```
-
----
-
-# 17. Model Transformer
-
-Model transformation should be an independent tool.
-
-It should eventually handle:
-
-* model import
-* model export
-* operator conversion
-* graph transformation
-* operator replacement
-* constant folding
-* graph optimization
-* layout conversion
-* precision conversion
-* backend-specific transformations
-
-The architecture should avoid implementing every format-to-format combination separately.
-
-Prefer:
-
-```text
-        Format A
-            ↓
-       Common IR / Model
-            ↓
-    ┌───────┼────────┐
-    ↓       ↓        ↓
- Format B Format C Format D
-```
-
-The exact internal representation should be investigated before implementation.
-
----
-
-# 18. Custom Research Components
-
-Research support is essential.
-
-A researcher may invent:
-
-* a new NN layer
-* a new loss
-* a new training procedure
-* a new optimization method
-* a new preprocessing algorithm
-* a new metric
-* an entirely new algorithm
-
-The platform must therefore support custom components.
-
-A custom component could expose:
-
-```text
-Name
-Version
-Inputs
-Outputs
-Parameters
-Capabilities
-Implementation
-Runtime Requirements
-```
-
-and be usable in the same pipeline as built-in components.
-
----
-
-# 19. Plugin System
-
-A good plugin system should be a major architectural feature.
-
-Plugins should eventually be capable of providing:
-
-* components
-* algorithms
-* runtimes
-* backends
-* importers
-* exporters
-* quantizers
-* dataset adapters
-* labeling adapters
-* execution providers
-* CLI commands
-* GUI panels
-
-Plugins should not necessarily be limited to shared libraries.
-
-Possible implementations:
-
-```text
-Native Plugin
-Python Plugin
-External Executable
-Remote Plugin
-```
-
-The plugin interface should prioritize stability and versioning.
-
-A manifest-based system is useful:
-
-```yaml
-name: example-plugin
-version: 1.0
-api_version: 1
-
-capabilities:
-  - importer
-  - exporter
-  - backend
-  - benchmark
-```
-
----
-
-# 20. Python Strategy
-
-Python should be supported because the research and ML ecosystem depends heavily on it.
-
-However, Python should not become the foundation of the entire core system.
-
-Preferred architecture:
-
-```text
-              C++ Core
-                  │
-        ┌─────────┼─────────┐
-        ↓         ↓         ↓
-     Native     Python    Remote
-    Backend     Worker     Worker
-```
-
-C++ should own the core abstractions and orchestration.
-
-Python should primarily provide access to ecosystems such as:
-
-* PyTorch
-* scikit-learn
-* XGBoost
-* NumPy
-* scientific Python
-* research code
-
-Python environments should be isolated from the user's general Python installation.
-
-This minimizes future dependency and environment problems.
-
----
-
-# 21. Common Core
-
-The ecosystem should share a small core rather than reinventing common concepts in every executable.
-
-Likely core abstractions:
-
-```text
-Component
-Graph
-DataObject
-Dataset
-Pipeline
-Model
-Experiment
-Run
-Metric
-Artifact
-Device
-Backend
-Runtime
-Worker
-Plugin
-```
-
-The exact API should be designed only after the first proof-of-concept.
-
----
-
-# 22. Desktop Suite
-
-A desktop application is still useful, but it should be treated as an optional suite.
-
-Possible interface:
-
-```text
-Project
-├── Data
-├── Labeling
-├── Models
-├── Pipelines
-├── Experiments
-├── Quantization
-├── Benchmarks
-└── Deployment
-```
-
-The desktop application should call the same tools and SDK available from the command line.
-
-It should not contain a second implementation of the underlying logic.
-
----
-
-# 23. CLI-First Principle
-
-A major architectural principle:
-
-> **Anything important should be possible without the GUI.**
-
-For example:
-
-```bash
-model inspect model.onnx
-model transform model.onnx --target ncnn
-quantize analyze model.onnx
-dataset validate dataset
-experiment run experiment.yaml
-benchmark model --device gpu
-deploy build model --target arm-linux
-```
-
-The GUI should improve usability, visualization, and discovery.
-
-It should not be the only way to use the system.
-
----
-
-# 24. Web
-
-The web should initially be considered mainly for:
-
-* documentation
-* examples
-* tutorials
-* interactive demonstrations
-* product presentation
-* model demonstrations
-* benchmark visualization
-* plugin discovery
-
-A future web execution environment is possible, but it should not be the architectural center.
-
-The primary development environment can remain desktop/native/CLI oriented.
-
----
-
-# 25. Marketplace / Store
-
-A component marketplace is an attractive future extension.
-
-Possible contents:
-
-```text
-Models
-Plugins
-Backends
-Datasets
-Pipelines
-Labeling integrations
-Deployment targets
-Custom components
-```
-
-Users could:
-
-```text
-Search
-Install
-Update
-Remove
-Publish
-Share
-```
-
-This should remain a future phase.
-
-The plugin architecture should be designed so that a marketplace can eventually be built on top of it.
-
----
-
-# 26. Data and Labeling
-
-Dataset management should be broader than simply splitting data into train/validation/test.
-
-A complete workflow may be:
+# 14. Data
+
+Data should be a first-class part of the system.
+
+Supported data types may include:
+
+* images
+* video
+* audio
+* text
+* tabular data
+* time series
+* point clouds
+* multimodal data
+* custom data formats
+
+The system should support:
 
 ```text
 Raw Data
@@ -1228,71 +622,391 @@ Curate
   ↓
 Label
   ↓
-Auto Label
-  ↓
-Review
-  ↓
-Clean
+Transform
   ↓
 Split
   ↓
 Version
 ```
 
-The system should support multiple data types:
+---
 
-* image
-* video
-* audio
-* text
-* tabular
-* time series
-* point cloud
-* multimodal
-* custom data
+# 15. Dataset Builder
 
-Initially, only the most useful data types need to be implemented.
+Potential operations:
+
+* import
+* inspect
+* clean
+* label
+* filter
+* transform
+* augment
+* normalize
+* split
+* balance
+* version
+* validate
+
+Train/validation/test should be supported where appropriate, but the system should not assume that every problem uses exactly these three sets.
 
 ---
 
-# 27. Dataset Automation
+# 16. Dataset Curation
 
-Automation should reduce human effort rather than simply add more configuration.
+Dataset quality should be treated as a major engineering concern.
+
+Potential automation:
+
+```text
+Dataset
+  ↓
+Duplicate Detection
+  ↓
+Invalid Sample Detection
+  ↓
+Outlier Detection
+  ↓
+Class Distribution
+  ↓
+Quality Analysis
+  ↓
+Curation
+```
 
 Potential capabilities:
 
-* automatic labeling
-* automatic quality checks
 * duplicate detection
+* near-duplicate detection
+* blur detection
+* invalid/corrupt sample detection
 * outlier detection
-* class imbalance detection
-* dataset recommendations
-* sample prioritization
+* imbalance analysis
+* sample filtering
+* subset selection
+* embedding-based exploration
+
+Existing tools such as FiftyOne and CVAT can be integrated rather than recreated immediately.
+
+---
+
+# 17. Labeling
+
+Labeling should be treated as a first-class capability.
+
+Initially, integration with established annotation tools may be more sensible than writing an entire labeling platform from scratch.
+
+Potential integrations:
+
+* CVAT
+* Label Studio
+* other annotation backends
+
+---
+
+# 18. Labeling Automation
+
+Automation can significantly reduce labeling cost.
+
+Possible workflow:
+
+```text
+Raw Data
+   ↓
+Existing Model / Detector
+   ↓
+Auto Label
+   ↓
+Human Review
+   ↓
+Correction
+   ↓
+Dataset Version
+```
+
+Possible features:
+
+* pre-labeling
+* model-generated proposals
+* object detection proposals
+* segmentation proposals
+* classification suggestions
+* tracking-assisted annotation
+* uncertainty-based sample selection
 * active learning
-* automatic split generation
-* calibration-set selection
+* automatic review prioritization
+
+The platform should eventually be able to answer:
+
+> **Which samples are most valuable to label next?**
+
+---
+
+# 19. Data Governance and Privacy
+
+Dataset tooling must eventually include data governance.
+
+Potential capabilities:
+
+```text
+Data Governance
+├── PII Detection
+├── Redaction
+├── Anonymization
+├── Data Lineage
+├── Provenance
+├── Dataset Versioning
+├── License Metadata
+├── Access Control
+└── Audit Information
+```
+
+Examples:
+
+* detect faces that should be anonymized
+* redact phone numbers
+* detect personal identifiers in text
+* record data sources
+* retain dataset provenance
+* track transformations
+
+The system should provide technical evidence and policy controls rather than claiming to provide legal compliance automatically.
+
+---
+
+# 20. Synthetic Data
+
+Synthetic data should be an optional data-generation pipeline.
+
+Conceptually:
+
+```text
+Data Requirement
+      ↓
+Synthetic Data Generator
+      ↓
+Quality Filter
+      ↓
+Human / Automated Validation
+      ↓
+Dataset
+```
+
+Possible backends:
+
+* diffusion models
+* simulators
+* Blender
+* Unreal Engine
+* procedural generation
+* domain-specific simulators
+
+The platform should orchestrate these systems rather than replace them.
+
+---
+
+# 21. Model Transformation
+
+`Model Transformer` should be an independent tool.
+
+Potential operations:
+
+* import
+* export
+* format conversion
+* graph rewrite
+* operator replacement
+* constant folding
+* graph optimization
+* layout conversion
+* precision conversion
+* backend-specific transformation
+
+The preferred long-term architecture is:
+
+```text
+Input Format
+      ↓
+Common Representation / IR
+      ↓
+Backend / Target Format
+```
+
+rather than maintaining every possible direct format-to-format pair.
+
+The exact IR strategy should be determined by experimentation.
+
+---
+
+# 22. Quantization
+
+Quantization should be a first-class tool and a potentially important standalone project.
+
+It should not be limited to:
+
+```text
+FP32 → INT8
+```
+
+A stronger workflow is:
+
+```text
+Model
+ ↓
+Analyze
+ ↓
+Select Calibration Data
+ ↓
+Calibrate
+ ↓
+Quantize
+ ↓
+Evaluate
+ ↓
+Benchmark
+ ↓
+Compare
+```
+
+Potential capabilities:
+
+* FP32 → FP16
+* FP32 → INT8
+* lower-precision formats where supported
+* static quantization
+* dynamic quantization
+* calibration
+* mixed precision
+* sensitivity analysis
+* accuracy comparison
+* performance comparison
+
+For LLMs, backend-specific ecosystems may introduce formats and methods such as GGUF and related quantization workflows. llama.cpp currently provides explicit quantization tooling around GGUF.
+
+The platform should expose a higher-level quantization abstraction while allowing backend-specific strategies.
+
+---
+
+# 23. Quantization as an Optimization Dimension
+
+Quantization should eventually participate in automated optimization.
 
 Example:
 
 ```text
-10,000 samples
+Experiment
+    ↓
+Optimization Search
+ ┌────┼──────────────┐
+ ↓    ↓              ↓
+FP32 FP16           INT8
+ ↓    ↓              ↓
+Eval Eval            Eval
+ └────┼──────────────┘
       ↓
-Quality Analysis
+Compare
       ↓
-1,200 questionable samples
-      ↓
-Human Review
-      ↓
-Final Dataset
+Best / Pareto Result
 ```
+
+Possible optimization dimensions:
+
+* architecture
+* hyperparameters
+* precision
+* quantization
+* backend
+* runtime
+* hardware
 
 ---
 
-# 28. Experiment as a First-Class Object
+# 24. Evaluation
 
-An experiment should contain enough information to reproduce it.
+Evaluation should go beyond accuracy and latency.
 
-Conceptually:
+A general evaluation layer may include:
+
+```text
+Evaluation
+├── Quality
+├── Performance
+├── Robustness
+├── Safety
+├── Fairness
+├── Explainability
+├── Security
+└── Resource Efficiency
+```
+
+Possible metrics include:
+
+* accuracy
+* precision/recall
+* F1
+* task-specific metrics
+* latency
+* throughput
+* memory
+* model size
+* power consumption
+* GPU utilization
+* robustness
+* fairness
+* hallucination
+* groundedness
+* tool-use reliability
+
+Different problem types should expose different relevant metrics.
+
+---
+
+# 25. Explainability
+
+The platform may integrate explainability methods such as:
+
+* SHAP
+* LIME
+* Grad-CAM
+* feature attribution
+* attention visualization
+* example-based explanations
+
+These should be treated as evaluation/analysis components rather than mandatory parts of every workflow.
+
+---
+
+# 26. Robustness, Safety, and Stress Testing
+
+Experiments should eventually support automated stress testing.
+
+Potential tests:
+
+* noisy inputs
+* distribution shifts
+* corrupted data
+* adversarial examples where appropriate
+* edge cases
+* extreme input sizes
+* prompt injection scenarios for agent systems
+* malformed inputs
+* unsupported inputs
+
+The platform should report not only:
+
+> "How accurate is the model?"
+
+but also:
+
+> "Under which conditions does the solution fail?"
+
+---
+
+# 27. Experiment
+
+Experiment should be a first-class object.
+
+Possible contents:
 
 ```text
 Experiment
@@ -1305,6 +1019,7 @@ Experiment
 ├── Runtime
 ├── Device
 ├── Random Seed
+├── Evaluation
 ├── Metrics
 └── Artifacts
 ```
@@ -1319,104 +1034,796 @@ Experiments should be:
 
 ---
 
-# 29. Automated Experimentation
+# 28. One-Click Experimentation
 
-Eventually the system should be able to search automatically.
+A normal workflow should eventually be:
 
-Possible optimization dimensions:
+```text
+Dataset
++
+Pipeline
++
+Model
++
+Target
+      ↓
+Run Experiment
+```
+
+The platform should handle as much infrastructure complexity as possible:
+
+```text
+Detect Environment
+        ↓
+Check Feasibility
+        ↓
+Recommend Configuration
+        ↓
+Prepare Runtime
+        ↓
+Prepare Data
+        ↓
+Run
+        ↓
+Evaluate
+        ↓
+Store Results
+```
+
+---
+
+# 29. Feasibility Engine
+
+Before spending time or compute, the platform should determine whether an experiment is likely to work.
+
+Inputs:
+
+```text
+Experiment
++
+Model
++
+Dataset
++
+Hardware
++
+Backend
++
+Runtime
+```
+
+Output:
+
+```text
+Feasible
+Warning
+Unsupported
+Likely to Fail
+```
+
+Examples:
+
+```text
+Batch size 64 is unlikely to fit into available VRAM.
+Recommended: 16.
+```
+
+```text
+Selected backend does not support one required operator.
+```
+
+```text
+The estimated model size exceeds target device memory.
+```
+
+```text
+The selected precision is not supported on the target accelerator.
+```
+
+---
+
+# 30. Recommendation Engine
+
+The recommendation system should go beyond error messages.
+
+It may consider:
+
+```text
+Hardware
+Dataset
+Model
+Runtime
+Backend
+Previous Experiments
+Constraints
+Available Workers
+```
+
+and recommend:
+
+* smaller batch size
+* different precision
+* different backend
+* different worker
+* quantization
+* model replacement
+* more calibration data
+* better dataset split
+* class balancing
+* alternative runtime
+* architecture change
+
+The output should distinguish between:
+
+```text
+Fact
+Warning
+Recommendation
+Prediction
+```
+
+so users understand the confidence and nature of the message.
+
+---
+
+# 31. Capability Matrix
+
+A capability database can determine whether a specific combination is supported.
+
+Example:
 
 ```text
 Model
-Architecture
-Learning Rate
-Batch Size
-Optimizer
-Augmentation
-Precision
-Quantization
 Backend
-Runtime
-Hardware
+Target
+Precision
+Runtime Version
+Operator Set
 ```
 
-The system could perform:
+→
+
+```text
+SUPPORTED
+```
+
+or:
+
+```text
+UNSUPPORTED
+```
+
+This can feed directly into the feasibility and recommendation engines.
+
+Conceptually:
+
+```text
+Capability Matrix
+        ↓
+Feasibility Engine
+        ↓
+Recommendation Engine
+```
+
+This may become an important differentiating capability.
+
+---
+
+# 32. Experiment Comparison
+
+Experiments should be compared across multiple dimensions.
+
+Example:
+
+```text
+Experiment A
+Accuracy: 93.1%
+Latency: 20 ms
+Memory: 180 MB
+
+Experiment B
+Accuracy: 94.2%
+Latency: 27 ms
+Memory: 160 MB
+
+Experiment C
+Accuracy: 92.8%
+Latency: 12 ms
+Memory: 90 MB
+```
+
+The platform should support multi-objective comparison:
+
+```text
+Accuracy       ↑
+Latency        ↓
+Memory         ↓
+Model Size     ↓
+Power          ↓
+Throughput     ↑
+```
+
+A Pareto-style view may be useful for optimization workflows.
+
+---
+
+# 33. Automated Optimization / AutoML
+
+Possible future dimensions:
+
+* model selection
+* architecture
+* hyperparameters
+* augmentation
+* precision
+* quantization
+* runtime
+* backend
+* hardware
+
+The generic loop becomes:
 
 ```text
 Search
  ↓
-Run Experiments
+Run
  ↓
 Evaluate
  ↓
 Compare
  ↓
-Select
+Search Again
 ```
 
-Quantization should be one of the optimization dimensions rather than an isolated final step.
+Quantization should be part of this loop.
 
 ---
 
-# 30. Feasibility and Recommendation Engine
+# 34. Profiling and Benchmarking
 
-A useful future subsystem:
+Benchmarking should eventually evolve into profiling.
+
+Possible tooling:
 
 ```text
-System Profile
-       +
-Experiment
-       ↓
-Feasibility Analysis
-       ↓
-Recommendations
+Profiler
+├── CPU
+├── GPU
+├── Memory
+├── VRAM
+├── Latency
+├── Throughput
+├── Operator Timing
+├── Runtime Overhead
+└── Power where available
 ```
 
-It could identify:
+This is especially important for:
 
-* insufficient RAM
-* insufficient VRAM
-* unsupported operators
-* incompatible runtime
-* unsuitable hardware
-* excessive model size
-* unrealistic batch size
-* expected execution bottlenecks
-* inappropriate quantization
-* inadequate calibration data
+* model optimization
+* quantization
+* backend selection
+* embedded deployment
+* hardware recommendation
 
-The engine should recommend alternatives.
+---
+
+# 35. Deployment Ecosystem
+
+Deployment should support multiple runtimes and target types.
+
+Important candidates include:
+
+```text
+General Inference
+├── ONNX Runtime
+├── TensorRT
+├── OpenVINO
+└── TFLite
+
+Edge / Mobile
+├── ncnn
+└── MNN
+
+Compiler / Optimization Ecosystem
+├── MLIR
+├── IREE
+└── TVM
+```
+
+ncnn and MNN should be treated as important deployment backends, especially for mobile and embedded targets.
+
+The platform should not attempt to replace these runtimes.
+
+---
+
+# 36. Deployment Targets
+
+Potential targets:
+
+```text
+Desktop
+Server
+Cloud
+Mobile
+Embedded Linux
+Accelerator
+Browser
+```
+
+Browser deployment should be considered a real target, not merely a documentation/demo environment.
+
+Relevant technologies include:
+
+* WebAssembly
+* WebGPU
+* browser inference runtimes
+
+ONNX Runtime Web is an example of a runtime that exposes browser-side inference through technologies such as WebAssembly and WebGPU.
+
+---
+
+# 37. Browser / Web Deployment
+
+A future deployment flow could be:
+
+```text
+Model
+ ↓
+Optimize
+ ↓
+Convert
+ ↓
+Package
+ ↓
+Wasm / WebGPU
+ ↓
+Browser
+```
+
+Potential goals:
+
+* client-side inference
+* privacy-preserving inference
+* zero server inference cost
+* offline/browser applications
+* interactive model demos
+
+The web may eventually provide both:
+
+```text
+Presentation Layer
+```
+
+and:
+
+```text
+Deployment Target
+```
+
+These should remain separate concepts.
+
+---
+
+# 38. Local and Remote Execution
+
+The cloud should not be mandatory.
+
+A research group may have:
+
+```text
+Researcher PC
+      │
+      ├── GPU workstation
+      ├── CPU server
+      ├── NAS
+      └── Embedded devices
+```
+
+These machines can become workers.
+
+Conceptually:
+
+```text
+                  Experiment
+                      │
+                 Scheduler
+                      │
+        ┌─────────────┼─────────────┐
+        ↓             ↓             ↓
+     Worker A      Worker B      Worker C
+       CPU           GPU         Embedded
+```
+
+The same architecture can later support cloud workers.
+
+---
+
+# 39. Security and Isolation
+
+The worker architecture introduces security requirements.
+
+The platform should eventually support:
+
+```text
+Security
+├── Authentication
+├── Authorization
+├── Worker Identity
+├── TLS / mTLS
+├── Secret Management
+├── Plugin Isolation
+├── Sandbox / Container Isolation
+├── Audit Logging
+└── Resource Limits
+```
+
+This is particularly important because plugins, research code, Python workers, models, and external tools may execute arbitrary code.
+
+Security should be treated as a platform constraint rather than a feature added at the end.
+
+---
+
+# 40. Plugin System
+
+A serious plugin system is required for long-term extensibility.
+
+Plugins may provide:
+
+```text
+Components
+Backends
+Runtimes
+Importers
+Exporters
+Quantizers
+Dataset Adapters
+Labeling Adapters
+Execution Providers
+CLI Commands
+GUI Panels
+Evaluation Methods
+```
+
+A plugin does not necessarily need to be a shared library.
+
+Possible implementations:
+
+```text
+Native Plugin
+Python Plugin
+External Executable
+Remote Plugin
+```
+
+The plugin interface should use versioned contracts.
+
+---
+
+# 41. Plugin Manifest
+
+A possible conceptual manifest:
+
+```yaml
+name: example-plugin
+version: 1.0
+api_version: 1
+
+capabilities:
+  - importer
+  - exporter
+  - backend
+  - benchmark
+
+targets:
+  - x86_64
+  - arm64
+```
+
+The exact specification should be designed after real plugin requirements are known.
+
+---
+
+# 42. CLI-First Principle
+
+Anything important should be possible without the GUI.
+
+Examples:
+
+```bash
+model inspect model.onnx
+
+model transform model.onnx --target ncnn
+
+quantize analyze model.onnx
+
+dataset validate dataset
+
+dataset curate dataset
+
+experiment run experiment.yaml
+
+benchmark model --device gpu
+
+deploy build model --target arm-linux
+```
+
+The GUI should improve:
+
+* discovery
+* visualization
+* configuration
+* experiment management
+* graph editing
+
+but should not be the only interface.
+
+---
+
+# 43. Independent Tool Strategy
+
+Each capability should be independently usable where practical.
 
 Examples:
 
 ```text
-Batch size 64 is unlikely to fit.
-Recommended: 16.
+model-inspector
+model-transformer
+model-benchmark
+quantize
+dataset-inspector
+dataset-validator
+dataset-curator
+label
+auto-label
+experiment
+benchmark
+deploy
 ```
 
-```text
-Selected runtime does not support one operator.
-Try another backend or replace the operator.
-```
-
-```text
-This model is too large for the selected embedded target.
-Consider quantization or a smaller architecture.
-```
-
-```text
-The selected GPU is inefficient for this workload.
-Another available worker is recommended.
-```
-
-The goal is not to automate every decision.
-
-The goal is to make the user aware of problems before expensive experiments start.
+A complete suite can provide a unified experience on top of these tools.
 
 ---
 
-# 31. Reproducibility
+# 44. Suggested Independent Tools by Difficulty
 
-Every experiment should record relevant information such as:
+## Level 1 — Small / Immediately Useful
+
+### Model Inspector
+
+Inspect:
+
+* operators
+* shapes
+* metadata
+* inputs
+* outputs
+* parameters
+* unsupported features
+
+### Model Transformer
+
+Convert or transform supported model formats.
+
+### Model Benchmark
+
+Measure:
+
+* latency
+* throughput
+* memory
+* model size
+* device properties
+
+### Dataset Inspector
+
+Inspect:
+
+* samples
+* schemas
+* statistics
+* distributions
+
+### Dataset Validator
+
+Check:
+
+* corrupt samples
+* schema consistency
+* missing fields
+* invalid labels
+* basic integrity
+
+---
+
+## Level 2 — Medium
+
+### Quantization Tool
+
+Analyze, calibrate, quantize, evaluate, compare, benchmark.
+
+### Dataset Curator
+
+Detect duplicates, outliers, invalid samples and data quality problems.
+
+### Labeling Automation
+
+Connect models to annotation workflows and reduce manual labeling.
+
+### Profiler
+
+Analyze resource usage and bottlenecks.
+
+---
+
+## Level 3 — Large
+
+### Experiment Runner
+
+Manage datasets, pipelines, models, runtimes, devices, metrics, and artifacts.
+
+### Experiment Comparator
+
+Compare multiple experiment results.
+
+### Feasibility / Recommendation Engine
+
+Evaluate whether experiments are realistic for a target system and recommend alternatives.
+
+---
+
+## Level 4 — Very Large
+
+### Visual Pipeline Builder
+
+Generic visual component graph.
+
+### NN Editor
+
+Visual neural-network creation and editing.
+
+### General Solution Editor
+
+Combine ML, NN, DSP, rules, algorithms, LLMs, RAG, and agents.
+
+### Deployment System
+
+Optimization, quantization, conversion, compilation, packaging, deployment.
+
+### Monitoring
+
+Post-deployment telemetry and drift detection.
+
+---
+
+# 45. Post-Deployment Monitoring
+
+Deployment should not be the end of the lifecycle.
+
+The long-term workflow should be:
+
+```text
+Develop
+   ↓
+Evaluate
+   ↓
+Deploy
+   ↓
+Observe
+   ↓
+Detect Problems
+   ↓
+Re-evaluate
+   ↓
+Update
+   ↓
+Redeploy
+```
+
+Monitoring may include:
+
+* latency
+* throughput
+* resource usage
+* input distributions
+* output distributions
+* model quality
+* error rate
+* drift
+* service health
+
+---
+
+# 46. Data Drift and Concept Drift
+
+The system should eventually detect:
+
+* data drift
+* concept drift
+* performance degradation
+* distribution changes
+* input anomalies
+
+A detected problem could trigger:
+
+```text
+Drift Detected
+      ↓
+Re-evaluation
+      ↓
+Experiment Creation
+      ↓
+Training / Fine-tuning
+      ↓
+Evaluation
+      ↓
+Deployment Candidate
+```
+
+Continuous training and automated redeployment should remain advanced future functionality.
+
+---
+
+# 47. Model / Dataset / Experiment Lineage
+
+Reproducibility requires more than storing the final model.
+
+The platform should preserve relationships such as:
+
+```text
+Dataset v3
+   ↓
+Pipeline v7
+   ↓
+Experiment 124
+   ↓
+Model v19
+   ↓
+Quantization v2
+   ↓
+Benchmark v4
+   ↓
+Deployment v3
+```
+
+This can be represented as lineage.
+
+---
+
+# 48. Artifact and Asset Management
+
+The ecosystem will create many persistent assets:
+
+```text
+Dataset
+Annotation
+Model
+Pipeline
+Experiment
+Benchmark
+Checkpoint
+Quantized Model
+Plugin
+Deployment Package
+```
+
+A higher-level `Asset` concept may eventually simplify management.
+
+Every asset should have:
+
+* identity
+* version
+* provenance
+* metadata
+* dependencies
+* ownership
+* storage location
+
+---
+
+# 49. Reproducibility
+
+Experiments should record relevant information such as:
 
 ```text
 Dataset Version
@@ -1432,85 +1839,412 @@ Metrics
 Artifacts
 ```
 
-A user should eventually be able to say:
-
-> Run this experiment again.
-
-and the system should reconstruct the required environment as far as possible.
+A previous experiment should eventually be reproducible with minimal manual reconstruction.
 
 ---
 
-# 32. Development Strategy
+# 50. Python Strategy
 
-The project is too large to build as a single application.
+Python should be supported because of the enormous AI/ML ecosystem around it.
 
-It should therefore be developed as a sequence of independently useful components.
+However, Python should not become the foundation of the core system.
 
-The development path should resemble:
+Preferred architecture:
 
 ```text
-Small Standalone Tools
-        ↓
-Shared Core
-        ↓
-Integrated Workflows
-        ↓
-Visual Suite
-        ↓
-Automation
-        ↓
-Cloud / Marketplace
+                 C++ Core
+                    │
+          ┌─────────┼─────────┐
+          ↓         ↓         ↓
+       Native     Python    Remote
+      Backend     Worker     Worker
 ```
 
-This allows development to continue even when there is no time to work on the complete system.
+C++ should own:
+
+* core abstractions
+* orchestration
+* execution protocol
+* plugin manager
+* project metadata
+* artifact management
+* process management
+
+Python should provide access to:
+
+* PyTorch
+* scikit-learn
+* XGBoost
+* NumPy
+* scientific Python
+* research code
+* Python-native runtimes
+
+Python environments should be isolated from the user's general Python installation.
 
 ---
 
-# 33. Recommended Project Phases
+# 51. Core Implementation
+
+A first candidate:
+
+```text
+C++20/23
+CMake
+```
+
+The core should be independent from the GUI.
+
+Possible modules:
+
+```text
+core/
+graph/
+component/
+execution/
+data/
+dataset/
+experiment/
+artifact/
+backend/
+runtime/
+plugin/
+device/
+recommendation/
+security/
+```
+
+Exact module boundaries should evolve with implementation.
+
+---
+
+# 52. Desktop GUI
+
+Qt 6 remains a strong candidate for the desktop layer.
+
+However:
+
+> **Qt should be a frontend, not the architecture.**
+
+Desired relationship:
+
+```text
+                 Common Core
+              /      |       \
+             /       |        \
+          CLI      Qt GUI    Remote API
+```
+
+This keeps the system open to future frontends.
+
+The desktop suite is valuable because it can unify independent tools, but users should still be able to install and use tools independently.
+
+---
+
+# 53. Web Strategy
+
+The web should have at least three distinct roles.
+
+## Documentation / Presentation
+
+* documentation
+* tutorials
+* examples
+* demonstrations
+* benchmark dashboards
+* plugin discovery
+
+## Remote Interface
+
+Potential future:
+
+```text
+Browser
+   ↓
+Remote API
+   ↓
+Worker
+```
+
+## Deployment Target
+
+Models should eventually be deployable to:
+
+* WebAssembly
+* WebGPU
+* browser inference runtimes
+
+These three roles should not be conflated.
+
+---
+
+# 54. Local Runtime Management
+
+The system should be able to manage isolated runtimes.
+
+A runtime may define:
+
+```text
+Python Version
+Framework Version
+CUDA Version
+Backend
+Dependencies
+```
+
+The user should not be forced to manually maintain every environment.
+
+Potential technologies:
+
+* virtual environments
+* container runtimes
+* OCI-compatible execution
+* environment managers
+
+The exact solution should be decided after the first execution prototypes.
+
+---
+
+# 55. Local / Cloud / Remote Abstraction
+
+Execution should use a common abstraction:
+
+```text
+Experiment
+    ↓
+Execution Request
+    ↓
+Executor
+```
+
+Possible executors:
+
+```text
+LocalExecutor
+RemoteExecutor
+ContainerExecutor
+PythonExecutor
+NativeExecutor
+CloudExecutor
+```
+
+This allows the same experiment to be executed in different locations.
+
+---
+
+# 56. Technology Direction
+
+Current candidate technologies:
+
+| Area               | Candidate                                |
+| ------------------ | ---------------------------------------- |
+| Core               | C++20/23                                 |
+| Build              | CMake                                    |
+| Desktop            | Qt 6                                     |
+| CLI                | C++                                      |
+| Python Integration | Isolated Python Worker                   |
+| RPC                | gRPC + Protobuf                          |
+| Metadata           | SQLite                                   |
+| Serialization      | JSON + Versioned Schema                  |
+| Data Interchange   | Apache Arrow                             |
+| NN Training        | PyTorch                                  |
+| Classical ML       | scikit-learn / XGBoost                   |
+| Computer Vision    | OpenCV                                   |
+| Model Interchange  | ONNX                                     |
+| General Inference  | ONNX Runtime                             |
+| Edge Inference     | ncnn / MNN                               |
+| LLM Local Runtime  | llama.cpp / Ollama                       |
+| GPU                | CUDA + Vulkan initially                  |
+| Compiler Ecosystem | MLIR / IREE / TVM                        |
+| Browser            | WebAssembly / WebGPU                     |
+| Labeling           | CVAT / Label Studio integrations         |
+| Dataset Curation   | FiftyOne integration + own orchestration |
+| Isolation          | Native Process / Container               |
+| Remote Workers     | Worker Protocol                          |
+| Cloud              | Later                                    |
+| Marketplace        | Later                                    |
+
+These are candidates rather than final commitments.
+
+---
+
+# 57. Deployment Backend Roles
+
+Technologies should be classified by their role.
+
+## Model / Interchange
+
+```text
+ONNX
+GGUF
+Other model formats
+```
+
+## Inference Runtime
+
+```text
+ONNX Runtime
+ncnn
+MNN
+TensorRT
+OpenVINO
+TFLite
+llama.cpp
+Other runtimes
+```
+
+## Compiler / Optimization
+
+```text
+MLIR
+IREE
+TVM
+Other compiler systems
+```
+
+The platform should keep these categories separate.
+
+---
+
+# 58. Security
+
+Security should be considered an architectural constraint.
+
+Areas include:
+
+* authentication
+* authorization
+* worker identity
+* mTLS
+* secrets
+* sandboxing
+* resource quotas
+* plugin isolation
+* audit logs
+* secure artifact storage
+* network access control
+
+This becomes especially important when:
+
+* plugins can execute code
+* Python workers execute arbitrary research code
+* machines participate as workers
+* remote execution is enabled
+
+---
+
+# 59. Marketplace / Store
+
+A future component marketplace is a natural extension of the plugin architecture.
+
+Potential assets:
+
+```text
+Plugins
+Models
+Components
+Backends
+Datasets
+Pipelines
+Deployment Targets
+Evaluation Packages
+```
+
+Possible operations:
+
+```text
+Search
+Install
+Update
+Remove
+Publish
+Share
+```
+
+This should remain a later phase.
+
+---
+
+# 60. Development Strategy
+
+The project is too large to build as one application.
+
+The preferred strategy is:
+
+```text
+Standalone Tool
+      ↓
+Useful Component
+      ↓
+Shared Core
+      ↓
+Integrated Workflow
+      ↓
+Visual Suite
+      ↓
+Automation
+      ↓
+Remote / Cloud
+      ↓
+Marketplace
+```
+
+This allows useful development even when only small amounts of time are available.
+
+A component should become valuable independently before being integrated into the larger suite.
+
+---
+
+# 61. Recommended Project Phases
 
 ## Phase 0 — Research
 
-Study:
+Investigate:
 
-* existing model converters
-* quantization systems
+* model transformation
+* quantization
 * inference runtimes
-* dataset tools
-* labeling tools
-* experiment managers
-* workflow systems
-* plugin architectures
-* compiler ecosystems
 * GPU backends
+* dataset systems
+* labeling systems
+* experiment systems
+* workflow engines
+* plugin architectures
+* GenAI runtimes
+* RAG systems
+* agent frameworks
+* browser runtimes
+* deployment systems
+* monitoring systems
 
 Main objective:
 
-> Determine where this project adds value instead of duplicating existing software.
+> Determine where the project adds value instead of duplicating existing software.
 
 ---
 
 ## Phase 1 — Standalone Tools
 
-Build small tools that are immediately useful.
+Start with relatively independent utilities.
 
-Suggested first candidates:
+Recommended candidates:
 
 ```text
-1. model-inspector
-2. model-transformer
-3. model-benchmark
-4. dataset-inspector
-5. dataset-validator
-6. quantization-tool
+model-inspector
+model-transformer
+model-benchmark
+dataset-inspector
+dataset-validator
+quantize
 ```
 
-These tools should be useful even if the rest of the ecosystem does not exist yet.
+These can be developed independently.
 
 ---
 
 ## Phase 2 — Shared Core
 
-Extract reusable abstractions:
+Extract only the abstractions already proven useful:
 
 ```text
 Component
@@ -1523,31 +2257,33 @@ Runtime
 Artifact
 Experiment
 Plugin
+Device
 ```
 
-Do not overdesign these abstractions before there are real use cases.
+Avoid overengineering the core before real tools exist.
 
 ---
 
-## Phase 3 — Dataset + Labeling
+## Phase 3 — Dataset / Labeling
 
-Add:
+Build:
 
 ```text
 Dataset
-Labeling
 Curation
+Labeling
 Automation
 Versioning
+Governance
 ```
 
-Integrate existing labeling systems where appropriate rather than immediately replacing them.
+Integrate established tools wherever possible.
 
 ---
 
 ## Phase 4 — Experiment Runner
 
-Build:
+Implement:
 
 ```text
 Experiment
@@ -1561,215 +2297,195 @@ Artifacts
 Comparison
 ```
 
-Support local machines first.
+Start locally.
 
 ---
 
-## Phase 5 — Custom Plugin System
+## Phase 5 — Plugin System
 
-Enable developers and researchers to add:
+Allow external developers and researchers to add:
 
 * components
 * algorithms
 * backends
+* runtimes
 * importers
 * exporters
+* evaluation methods
 * CLI commands
-* custom training code
 
 ---
 
-## Phase 6 — Visual Pipeline
+## Phase 6 — Visual Environment
 
-Build the visual editor once the underlying abstractions are proven.
+Implement:
 
-This avoids creating a GUI around an unstable architecture.
+* visual graph editor
+* dataset views
+* experiment management
+* model visualization
+* configuration panels
+
+The visual layer should be built after the underlying abstractions are proven.
 
 ---
 
-## Phase 7 — Optimization / AutoML
+## Phase 7 — Optimization
 
 Introduce:
 
 * hyperparameter search
-* model selection
 * quantization search
+* architecture search
 * backend selection
 * hardware selection
 * multi-objective optimization
 
 ---
 
-## Phase 8 — Local Network Workers
+## Phase 8 — GenAI / Agent Layer
 
-Allow experiments to run on other machines in the user's environment.
+Add:
+
+* LLM runtimes
+* embeddings
+* RAG
+* vector stores
+* agent pipelines
+* multimodal pipelines
+* foundation model tooling
 
 ---
 
-## Phase 9 — Deployment
+## Phase 9 — Distributed Workers
+
+Support:
+
+* local network workers
+* GPU workstations
+* CPU servers
+* embedded targets
+* remote workers
+
+---
+
+## Phase 10 — Deployment
 
 Integrate:
 
-* export
+* model transformation
 * quantization
-* model conversion
+* optimization
 * compilation
 * packaging
 * deployment
-
-with multiple runtimes and targets.
-
----
-
-## Phase 10 — Desktop Suite
-
-Combine the independent tools into a coherent desktop experience.
-
-The suite should remain optional.
+* browser targets
 
 ---
 
-## Phase 11 — Web / Cloud
+## Phase 11 — Monitoring
 
-Later additions:
+Add:
+
+* production telemetry
+* data drift
+* concept drift
+* model performance monitoring
+* automated evaluation
+* retraining triggers
+
+---
+
+## Phase 12 — Desktop Suite
+
+Unify the independent tools into a coherent desktop application.
+
+The suite remains optional.
+
+---
+
+## Phase 13 — Web / Cloud
+
+Add:
 
 * remote execution
 * cloud workers
-* online demonstrations
 * dashboards
-* collaborative projects
-* web interface
+* web interfaces
+* browser demos
+* browser deployment workflows
 
 ---
 
-## Phase 12 — Marketplace
+## Phase 14 — Marketplace
 
-Eventually:
+Eventually support:
+
+* plugin discovery
+* installation
+* updates
+* sharing
+* publishing
+
+---
+
+# 62. Realistic MVP
+
+A complete platform should not be the MVP.
+
+A realistic integrated MVP is:
 
 ```text
-Search
-Install
-Update
-Publish
-Share
+Generic Component Graph
+       ↓
+Dataset Input
+       ↓
+A Few Components
+       ↓
+Local Execution
+       ↓
+Experiment
+       ↓
+Metrics
+       ↓
+Artifact Storage
 ```
 
-plugins and other reusable assets.
-
----
-
-# 34. Initial Technology Direction
-
-The current technology direction is:
-
-| Area               | Candidate                            |
-| ------------------ | ------------------------------------ |
-| Core               | C++20/23                             |
-| Build              | CMake                                |
-| Desktop UI         | Qt 6                                 |
-| CLI                | C++                                  |
-| Python             | Isolated worker/process              |
-| RPC                | gRPC + Protobuf                      |
-| Metadata           | SQLite                               |
-| Serialization      | JSON + versioned schema              |
-| Data interchange   | Apache Arrow                         |
-| NN training        | PyTorch                              |
-| Classical ML       | scikit-learn / XGBoost               |
-| Computer Vision    | OpenCV                               |
-| Model interchange  | ONNX                                 |
-| General inference  | ONNX Runtime                         |
-| Edge inference     | ncnn / MNN                           |
-| GPU                | CUDA + Vulkan initially              |
-| Compiler ecosystem | MLIR / IREE / TVM                    |
-| Labeling           | Existing tool integrations initially |
-| Dataset curation   | Existing tools + own orchestration   |
-| Containers         | OCI-compatible approach              |
-| Local execution    | Native process / worker              |
-| Remote execution   | Worker protocol                      |
-| Cloud              | Later                                |
-
-These are **candidates, not final commitments**.
-
-Technology selection should be validated through small PoCs.
-
----
-
-# 35. GUI Technology Strategy
-
-Qt remains a strong candidate for the eventual desktop application.
-
-However:
-
-> **The core architecture must not depend on Qt.**
-
-The desired relationship is:
+Potential initial backends:
 
 ```text
-                 Core SDK
-              /     |      \
-             /      |       \
-          CLI     Qt GUI   Remote API
+PyTorch
+scikit-learn
 ```
 
-This preserves the possibility of replacing or adding frontends later.
+Potential independent tools:
 
-The first GUI should therefore be considered a client of the core rather than the owner of the architecture.
+```text
+model-inspector
+model-transformer
+quantize
+benchmark
+dataset-inspector
+dataset-validator
+```
+
+No cloud.
+
+No marketplace.
+
+No complete AutoML system.
+
+No massive deployment matrix.
+
+No attempt to recreate existing ML frameworks.
 
 ---
 
-# 36. Python Strategy
+# 63. First Proof of Concept
 
-Python should be an ecosystem integration layer rather than the core architecture.
+The most important technical proof should demonstrate that NN and non-NN solutions can use the same architecture.
 
-Preferred direction:
-
-```text
-C++ Core
-   ↓
-Python Worker
-   ↓
-PyTorch / sklearn / XGBoost / Research Code
-```
-
-Advantages:
-
-* access to the existing ML ecosystem
-* isolation from the core process
-* easier environment management
-* easier failure isolation
-* same execution protocol can later be used remotely
-
-Potential problems:
-
-* dependency management
-* version conflicts
-* CUDA compatibility
-* startup cost
-* environment isolation
-
-These should be managed rather than used as a reason to exclude Python.
-
----
-
-# 37. First Proof of Concept
-
-Before building the complete product, prove the architecture with a tiny system.
-
-Target:
-
-```text
-CLI
- ↓
-Core
- ↓
-Execution Engine
- ↓
-Python Worker
- ↓
-Backend
-```
-
-A first experiment could be:
+### Experiment A
 
 ```text
 Dataset
@@ -1781,7 +2497,7 @@ Random Forest
 Evaluation
 ```
 
-A second:
+### Experiment B
 
 ```text
 Image
@@ -1793,153 +2509,147 @@ Neural Network
 Evaluation
 ```
 
-Both should run through the same generic experiment mechanism.
-
-If that works, the project has demonstrated that:
-
-> **NN and non-NN solutions can coexist inside the same abstraction.**
-
----
-
-# 38. MVP
-
-A realistic first integrated MVP does not need everything.
-
-Potential scope:
+Both should use:
 
 ```text
-Generic Graph
-    ↓
-Dataset Input
-    ↓
-A few Components
-    ↓
-Local Execution
-    ↓
+Core
+ ↓
+Graph
+ ↓
+Execution Engine
+ ↓
+Backend
+ ↓
 Experiment
-    ↓
-Metrics
-    ↓
-Artifact Storage
 ```
 
-Possible first backends:
-
-```text
-PyTorch
-scikit-learn
-```
-
-Possible first standalone tools:
-
-```text
-model-inspector
-model-transformer
-quantize
-benchmark
-dataset-inspector
-```
-
-No cloud.
-No marketplace.
-No full AutoML.
-No complete labeling platform.
-No huge deployment matrix.
+If this works, the fundamental abstraction has been validated.
 
 ---
 
-# 39. What Should Be Avoided
+# 64. What Not to Do Initially
 
-Do not initially try to:
+Do not initially attempt to:
 
 * recreate PyTorch
+* recreate scikit-learn
 * recreate ONNX
 * recreate ncnn
 * recreate MNN
-* recreate a complete labeling platform
-* recreate a cloud provider
-* implement every model format
-* implement every GPU backend
+* build every labeling tool
+* build a complete cloud platform
+* support every model format
+* support every GPU API
 * implement every deployment target
-* implement a complete MLOps system
-* build the entire desktop suite first
+* build a complete MLOps system
+* implement full continuous training
+* build the full desktop suite first
 
-The project's value comes from **integration and simplification**, not from replacing the entire ecosystem.
+The project's competitive value comes primarily from:
+
+```text
+Integration
++
+Automation
++
+Visualization
++
+Orchestration
++
+Recommendations
++
+Modularity
+```
 
 ---
 
-# 40. Long-Term Vision
+# 65. Long-Term User Experience
 
-The final user experience should be approximately:
+The ideal workflow:
 
 ```text
 I have a problem.
       ↓
 I provide my data.
       ↓
-I inspect / label / curate it.
+I inspect / curate / label it.
       ↓
-I construct or select a solution.
+I choose or build a solution.
       ↓
-I configure an experiment.
+The system checks feasibility.
       ↓
-The system checks whether it is feasible.
+It gives recommendations.
       ↓
-It recommends improvements.
+I run an experiment.
       ↓
-I run the experiment.
+It evaluates the result.
       ↓
-It compares the results.
+It compares alternatives.
       ↓
-It can automatically explore alternatives.
+It can automatically explore better configurations.
       ↓
-I select the best solution.
+I optimize / quantize / transform the solution.
       ↓
-I quantize / optimize / transform it.
+I benchmark it on the target.
       ↓
-I benchmark it on my target.
+I deploy it.
       ↓
-I export and deploy it.
+The system monitors it.
+      ↓
+It detects problems.
+      ↓
+It can create a new experiment.
 ```
 
-The user should be able to perform all of this visually.
+The user may perform the same workflow through:
 
-The developer should be able to perform the same operations through CLI, SDK, scripts, or plugins.
-
-The researcher should be able to introduce completely new components without waiting for the platform itself to implement them.
+```text
+GUI
+CLI
+SDK
+API
+Plugin
+```
 
 ---
 
-# 41. Guiding Principles
+# 66. Guiding Principles
 
-1. **Do not reinvent established tools without a compelling reason.**
-2. **Integrate first, replace only when necessary.**
-3. **Everything important should be scriptable.**
-4. **Every major capability should be independently usable where practical.**
+1. **Do not reinvent established technologies without a compelling reason.**
+2. **Integrate first; replace only when necessary.**
+3. **Anything important should be scriptable.**
+4. **Major capabilities should be independently usable where practical.**
 5. **The full suite should be optional.**
 6. **The GUI should be a client of the core, not the core itself.**
-7. **Python should be supported without making it the architectural foundation.**
+7. **Python should be supported without becoming the architectural foundation.**
 8. **GPU support should be designed in from the beginning.**
 9. **Quantization should be a first-class capability.**
-10. **Labeling and dataset curation should be treated as important engineering problems.**
-11. **Custom research components must be supported.**
-12. **Plugins should be a major extension mechanism.**
-13. **Local compute should be a first-class target.**
-14. **Cloud should be an extension, not a requirement.**
-15. **Experiments must be reproducible.**
-16. **Automation should remove repetitive work, not remove control.**
-17. **System-aware recommendations should help users avoid expensive mistakes.**
-18. **The architecture should be extensible, while the initial implementation remains small.**
+10. **Dataset quality, labeling, and governance are first-class engineering concerns.**
+11. **Neural networks are only one kind of solution.**
+12. **Foundation models and GenAI belong in the architecture.**
+13. **RAG and agent workflows should use the same composable component philosophy.**
+14. **Custom research components must be possible.**
+15. **Plugins should be a major extension mechanism.**
+16. **Local compute should be first-class.**
+17. **Cloud should be an extension, not a requirement.**
+18. **Browser deployment should be considered a real target.**
+19. **Experiments must be reproducible.**
+20. **Security must be designed into worker and plugin architecture.**
+21. **Deployment is not the end of the lifecycle.**
+22. **Monitoring and drift detection belong in the long-term architecture.**
+23. **Automation should remove repetitive work, not remove control.**
+24. **Recommendation systems should help users avoid expensive mistakes.**
+25. **The architecture should be ambitious; the initial implementation should be small.**
 
 ---
 
-# 42. Current Scope
+# 67. Current Scope
 
-This is a long-term project.
+This is intentionally a long-term project.
 
-The complete vision is intentionally much larger than what can be implemented simultaneously.
+The complete vision is much larger than what can be implemented simultaneously.
 
-The practical strategy is:
+The project should therefore evolve organically:
 
 ```text
 Independent Tool
@@ -1954,30 +2664,82 @@ Visual Suite
       ↓
 Automation
       ↓
-Cloud / Marketplace
+Distributed Execution
+      ↓
+Deployment / Monitoring
+      ↓
+Web / Cloud
+      ↓
+Marketplace
 ```
 
-The project does not need to be built from top to bottom.
+The platform does not need to be built from top to bottom.
 
-It can grow organically as individual components become useful.
+Individual tools should remain useful even if the rest of the ecosystem is incomplete.
 
 ---
 
-# 43. Immediate Candidates
+# 68. Immediate Candidates
 
-The most promising early standalone projects are currently:
+The strongest current candidates for independent development are:
 
 ```text
-Model Inspector
-Model Transformer
-Model Benchmark
-Quantization Tool
-Dataset Inspector
-Dataset Validator
-Dataset Curator
-Labeling Automation
+1. Model Inspector
+2. Model Transformer
+3. Model Benchmark
+4. Quantization Tool
+5. Dataset Inspector
+6. Dataset Validator
+7. Dataset Curator
+8. Labeling Automation
+9. Profiler
+10. Experiment Runner
 ```
 
-Among these, **Model Transformer** and especially **Quantization** appear to be strong candidates for early independent development because they can provide value without requiring the complete platform.
+The most attractive early candidates are currently:
 
-The next architectural milestone is to determine which of these tools can share a minimal common core without creating unnecessary coupling.
+```text
+Model Transformer
+Quantization
+Model Benchmark
+```
+
+because they can provide meaningful value without requiring the complete platform.
+
+---
+
+# 69. Final Positioning
+
+This project should not be thought of as:
+
+> "Another neural network editor."
+
+It should not be thought of as:
+
+> "Another MLOps platform."
+
+It should not be thought of as:
+
+> "A new machine learning framework."
+
+Its role is different:
+
+> **A modular engineering environment that connects existing AI, ML, data, optimization, and deployment technologies and makes them easier to use together.**
+
+The system should become the layer between the engineer and the growing complexity of the AI ecosystem.
+
+The platform should make:
+
+```text
+Complex ecosystem
+        ↓
+Common abstractions
+        ↓
+Simplified workflows
+        ↓
+Automation
+        ↓
+Practical solutions
+```
+
+possible without hiding the underlying technologies from people who need direct access to them.
