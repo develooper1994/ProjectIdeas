@@ -63,7 +63,7 @@ At the start, OEIN should **not** attempt to be:
 ### 2.3 Position relative to major platforms
 
 | Platform/category | Established strength | OEIN's proposed distinction |
-|---|---|---|
+| --- | --- | --- |
 | Bloomberg and financial-data terminals | Licensed financial data, news, market workflows, reference data and professional distribution | Start from external observable economic activity and micro-level evidence; connect product, location, company, trade and macro signals into independent research products |
 | Palantir Foundry | Integrates and models an organisation's data, assets, relationships and operational processes through an ontology | Focus on continuously discovering and connecting external economic evidence across organisations, countries, products and markets |
 | Altana | Supply-chain graph built from public/commercial records, proprietary logistics operations data and customer data; value-chain and supplier-network mapping | Do not replicate its core supply-chain product. Focus on a broader combination of consumer/product prices, macroeconomics, company/country economics, market transmission, forecasts and public research access |
@@ -234,7 +234,7 @@ A commercial data source should be considered when it provides material incremen
 ### 5.2 OSINT source classes
 
 | Source class | Examples of information |
-|---|---|
+| --- | --- |
 | Government and statistical agencies | CPI, PPI, wages, production, trade, energy, housing, transport, taxes, public procurement |
 | Central banks and regulators | Rates, monetary data, credit, financial stability, market statistics, regulated-company disclosures |
 | Company disclosures | Annual and quarterly reports, earnings releases, investor presentations, product catalogues, capacity and investment disclosures |
@@ -290,7 +290,7 @@ A project that contains 20 connectors may reveal only 12 independent upstream so
 These are **research references**, not a decision to adopt every project or reuse its code/data. Current capabilities, maintenance, API access and licensing must be rechecked before implementation.
 
 | Project | What to study or potentially reuse | Important caveat |
-|---|---|---|
+| --- | --- | --- |
 | [OpenBB](https://github.com/openbq-org/OpenBB) | Financial/economic data provider architecture, typed client, REST API, MCP and provider extensions | Provider data terms remain separate; inspect each provider's commercial rights |
 | [Open Prices](https://github.com/openfoodfacts/open-prices) | Price observations, proof images, locations, product matching, REST API and community contributions | Data is under ODbL; attribution/share-alike and restrictions on combining non-open data matter |
 | [FollowTheMoney](https://github.com/opensanctions/followthemoney) | Entity graph data model, normalization, validation, identifiers and source references | Software license is MIT; this does not make OpenSanctions datasets commercially free |
@@ -383,7 +383,7 @@ Do **not** store every byte from every source by default. Do **not** rely exclus
 Use a hybrid, rights-aware model.
 
 | Layer | Retention approach | Reason |
-|---|---|---|
+| --- | --- | --- |
 | Source registry | Persistent | Source identity, terms, health, scope, dependencies and access history |
 | Entity/product/location registry | Persistent and versioned | Stable identifiers, deduplication and relationships |
 | Canonical observations | Persistent where rights allow | Historical comparisons, reproducibility and independent analysis |
@@ -489,7 +489,7 @@ One major research module should attempt to map the observable inputs and output
 
 For a public company, discover and connect as much of the following as sources allow:
 
-**Inputs / upstream**
+#### Inputs / upstream
 
 - Raw materials and commodities.
 - Components and packaging.
@@ -498,14 +498,14 @@ For a public company, discover and connect as much of the following as sources a
 - Labour and skills requirements.
 - Capital expenditure and financing.
 
-**Operations**
+#### Operations
 
 - Facilities, locations and capacity.
 - Product lines and manufacturing activity.
 - Inventory and production disclosures.
 - Technology, process and material dependencies.
 
-**Outputs / downstream**
+#### Outputs / downstream
 
 - Products, services and brands.
 - Customers and distribution channels where disclosed.
@@ -683,7 +683,7 @@ The marketplace is a distinct commercial product and trust domain. Third-party c
 ### 13.1 Core versus Marketplace
 
 | Area | Core platform | Marketplace |
-|---|---|---|
+| --- | --- | --- |
 | Ownership | OEIN | Independent creator/provider |
 | Data pipelines | Platform-governed | Creator-controlled or separately approved |
 | Source approval | Core source governance | Marketplace admission/moderation, then separate Core review if proposed for ingestion |
@@ -792,7 +792,7 @@ Unknown legal rights must remain `UNKNOWN`; the agent must not infer permission 
 ### 14.4 Source lifecycle states
 
 | State | Meaning | System behaviour |
-|---|---|---|
+| --- | --- | --- |
 | `ACTIVE` | Source is responding and passing checks | Normal ingestion |
 | `DEGRADED` | Late, incomplete, inconsistent or lower-quality data | Reduce confidence; alert; fallback where possible |
 | `PASSIVE` | Source has stopped providing new data or has become unavailable | Preserve permitted history; stop treating as live |
@@ -1065,7 +1065,7 @@ The initial commercial objective is not maximum user growth. It is to prove that
 ### 19.1 Revenue streams
 
 | Stream | Product | Likely customer |
-|---|---|---|
+| --- | --- | --- |
 | Research subscription | Research Terminal, saved analysis, alerts | Individual investors, analysts, researchers |
 | Enterprise subscription | Competitive price, procurement and market intelligence | Manufacturers, retailers, distributors, procurement teams |
 | Data API | Structured prices, indexes, company/country relationships | Developers, fintech, analytics providers |
@@ -1244,7 +1244,7 @@ Exit gate: Core trust and governance are mature enough that third-party content 
 These are candidates for research, not final commitments.
 
 | Candidate | Why it is interesting | Main difficulty |
-|---|---|---|
+| --- | --- | --- |
 | Food and dairy | Frequent prices, SKU comparisons, agricultural inputs, high consumer relevance | Exact SKU coverage, promotions, store/location gaps, product matching |
 | Energy and petrochemicals | Strong links between commodities, inputs, manufacturing, transport and inflation | Licensed market data, complex pricing formulas and regional benchmarks |
 | Housing and affordability | Strong public interest and clear geographic dimension | Asking rents versus actual rents, listings bias, privacy and weak historical continuity |
